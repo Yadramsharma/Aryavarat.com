@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+  --bg: #f5f0e1;
+  --primary: #8b0000;  /* deep red */
+  --secondary: #f4d03f; /* golden yellow */
+  --text: #222222;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+}
+.img{
+   display: block;
+  margin: 0 auto;
+  max-width: 100%; /* keeps image responsive */
+  height: auto;
+  filter: brightness(85%); 
+}
+.left{
+    color: #c76e2e;
+    font-weight: bold;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+hr {
+  border: 1px solid var(--primary);
+}
+
+nav {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: var(--primary);
+  color:white
+  
+}
+
+nav a:hover {
+  color: var(--secondary);
+}
+/* Basic nav setup */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+  display: inline-block;
+}
+
+/* Submenu setup */
+nav ul li ul.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;   /* dropdown appears directly below */
+  left: 0;     /* aligned with left of parent */
+  background-color: #fffaf0;
+  border: 1px solid #d2b48c;
+  min-width: 180px;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+/* Show submenu on hover */
+nav ul li:hover > ul.submenu {
+  display: block;
+}
+
+/* Submenu items style */
+nav ul li ul.submenu li {
+  display: block;
+  padding: 10px 15px;
+}
+
+nav ul li ul.submenu li a {
+  color: #5a4c40;
+  text-decoration: none;
+  display: block;
+  font-family: 'Merriweather', serif;
+}
+
+nav ul li ul.submenu li a:hover {
+  background-color: #f5e9d3;
+  color: #8e5a2f;
+}
+nav ul li a:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+
+.a1{
+    color:#c19a6b;
+    font-weight: bold;
+    font-family:'Playfair Display', serif;
+
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+#typewriter{color:#c19a6b;
+    font-weight: bold;
+    font-family:'Playfair Display', serif;
+    text-align: center;
+    text-decoration: underline;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    background-color: #f5e9d3;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8e5a2f;
+}
+
+nav ul li a:hover {
+    color: #e1b866;
+    font-size: 1.04rem;
+}
