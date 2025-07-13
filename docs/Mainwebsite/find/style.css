@@ -1,0 +1,208 @@
+/* ---------- Global Styles ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  background-color: #fffdf6;
+  color: #2c2c2c;
+  line-height: 1.6;
+}
+
+/* ---------- Header & Footer ---------- */
+header, footer {
+  background: linear-gradient(to right, #662d91, #ff9933);
+  color: #fff;
+  text-align: center;
+  padding: 1.5em 1em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+header h1 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+}
+
+footer {
+  font-size: 0.9em;
+  margin-top: 3em;
+}
+
+/* ---------- Section Layouts ---------- */
+section {
+  max-width: 900px;
+  margin: 2.5em auto;
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.6em;
+  border-left: 6px solid #ff6600;
+  padding-left: 10px;
+  color: #4a148c;
+}
+
+/* ---------- Profile Picture ---------- */
+.profile-pic {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 1.2em;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border: 3px solid #ff9933;
+}
+
+/* ---------- Text Blocks ---------- */
+.profile-section p,
+.message-section p {
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+/* ---------- Links List ---------- */
+.links-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.links-section li {
+  margin: 0.75em 0;
+}
+
+.links-section a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #004d99;
+  background-color: #e6f0ff;
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.links-section a:hover {
+  background-color: #ffecdb;
+  color: #d84315;
+  transform: translateX(5px);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  section {
+    margin: 1.5em 1em;
+    padding: 1.5em;
+  }
+
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

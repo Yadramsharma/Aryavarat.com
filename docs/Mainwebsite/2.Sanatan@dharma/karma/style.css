@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #ffffff;
+}
+
+.navbar {
+  background-color: #204d40; /* dark green from image 1 */
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  display: block;
+}
+
+.nav-links a:hover {
+  background-color: #2e6b58; /* slightly lighter green for hover */
+  border-radius: 4px;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: #204d40; /* same green */
+  top: 40px;
+  left: 0;
+  min-width: 180px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 999;
+  border-radius: 4px;
+}
+
+.submenu li {
+  width: 100%;
+}
+
+.dropdown:hover > .submenu {
+  display: block;
+}
+
+/* Nested submenu (e.g., Avatars) */
+.submenu .dropdown:hover .submenu {
+  left: 100%;
+  top: 0;
+}
+
+.nav-links,
+.nav-links ul,
+.nav-links li,
+.submenu,
+.submenu li {
+  list-style: none;  /* ✅ Removes all bullet points */
+}
+
+/* === Karma & Rebirth Section === */
+.sdh-section {
+  background-color: #fdfdfd; /* Keep white for content contrast */
+  padding: 40px 60px;
+  font-family: 'Merriweather', serif;
+  color: #111;  /* dark text for readability */
+}
+
+.sdh-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  border-left: 8px solid #1b3e38; /* deep green accent */
+  padding-left: 15px;
+}
+
+.sdh-section .content-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.sdh-section .p2 {
+  flex: 1 1 60%;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.sdh-section .img-box {
+  flex: 1 1 35%;
+  text-align: center;
+}
+
+.sdh-section .img-box img.img1 {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Highlighted words */
+.sdh-section .highlight {
+  color: #00594f;           /* deep green */
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

@@ -1,0 +1,277 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body font and background */
+body {
+  font-family: 'Merriweather', serif;
+  background-color: #fef8ed;
+  color: #4d2c0c;
+}
+
+/* Navbar styling */
+nav {
+  background-color: #f5e6c3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+  border-bottom: 2px solid #deb887;
+  z-index: 999;
+  position: relative;
+}
+
+.left {
+  font-size: 24px;
+  font-weight: bold;
+  color: #933; /* Dark red */
+}
+
+/* Right menu */
+.right ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.right ul li {
+  position: relative;
+}
+
+.right ul li a {
+  text-decoration: none;
+  color: #4d2c0c;
+  font-weight: 600;
+  padding: 8px 10px;
+  display: block;
+  transition: background 0.3s;
+}
+
+.right ul li a:hover {
+  background-color: rgba(245, 230, 195, 0.6);
+  border-radius: 4px;
+}
+
+/* Dropdown submenu */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fffaf0;
+  min-width: 200px;
+  border: 1px solid #e0c9a6;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  z-index: 999;
+}
+
+.right ul li:hover > .submenu {
+  display: block;
+}
+
+/* Submenu items */
+.submenu li {
+  position: relative;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+/* Nested submenu */
+.submenu li:hover > .submenu {
+  display: block;
+  top: 0;
+  left: 100%;
+}
+
+/* Heading under navbar */
+header h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 28px;
+  color: #4d2c0c;
+}
+
+header p {
+  text-align: center;
+  font-size: 16px;
+  color: #6a4a21;
+  margin-bottom: 30px;
+}
+
+/* Ashrama section styling */
+.ashrama-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 30px 20px;
+}
+
+.ashrama-card {
+  background-color: #fffdf7;
+  border: 1px solid #e5d3af;
+  border-radius: 10px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.ashrama-card:hover {
+  transform: translateY(-5px);
+}
+
+.ashrama-card h2 {
+  color: #8b4513;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.ashrama-card p {
+  color: #333;
+  font-size: 14px;
+}
+
+.ashrama-card blockquote {
+  font-style: italic;
+  color: #5c3a0f;
+  border-left: 4px solid #deb887;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+nav {
+  font-family: 'Merriweather', serif;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+}
+
+nav ul .submenu {
+  display: none;
+  position: absolute;
+  background-color: #f9f1d6;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  min-width: 200px;
+  z-index: 99;
+}
+
+nav ul li:hover > .submenu {
+  display: block;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

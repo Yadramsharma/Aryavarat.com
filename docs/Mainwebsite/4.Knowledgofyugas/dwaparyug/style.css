@@ -1,0 +1,305 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f4f1eb;
+  color: #3b2f2f;
+  line-height: 1.8;
+}
+
+.yuga-title {
+    text-align: center;
+    color: #743f14; /* earthy brown tone */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    font-family: 'Georgia', serif;
+}
+
+.title-underline {
+    width: 60px;
+    height: 3px;
+    background-color: #d44d2a; /* warm red underline */
+    margin: 10px auto 30px auto;
+    border: none;
+    border-radius: 2px;
+}
+
+
+.navbar {
+  background-color: #f5e7d0;
+  color: #5c3d2e;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.logo {
+  font-size: 1.6rem;
+  color: #b3412e;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5c3d2e;
+}
+
+.nav-links a:hover {
+  color: #b3412e;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background: #f1d9b5;
+  top: 100%;
+  left: 0;
+  padding: 0.5rem;
+  list-style: none;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+.submenu li a {
+  color: #5c3d2e;
+  display: block;
+  padding: 0.4rem;
+}
+
+/* First-level dropdown */
+.navbar .dropdown .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  color: #5c3d2e;
+  min-width: 200px;
+  z-index: 1000;
+}
+
+/* Show submenu on hover */
+.navbar .dropdown:hover > .submenu {
+  display: block;
+}
+
+/* Nested submenu under 'Avatars' */
+.navbar .submenu .dropdown .submenu {
+  top: 0;
+  left: 100%;
+  display: none;
+  position: absolute;
+  color: #5c3d2e;
+}
+
+/* Show nested submenu on hover */
+.navbar .submenu .dropdown:hover > .submenu {
+  display: block;
+}
+
+/* Optional: hover effect */
+.navbar a:hover {
+  color: #5c3d2e;
+}
+
+/* Fix for arrow spacing */
+.navbar .dropdown > a::after {
+  content: "";
+}
+
+
+.dropdown:hover .submenu {
+  display: block;
+}
+
+.chapter-body {
+  padding: 3rem 12%;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  margin: 2rem auto;
+  max-width: 1200px;
+  border-radius: 8px;
+}
+
+.chapter-body h1 {
+  color: #8c3b2e;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-body h2 {
+  color: #c7573b;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.chapter-body p {
+  margin-bottom: 1.4rem;
+  font-size: 1.05rem;
+}
+
+
+.chapter-body {
+  padding: 2.5rem 5%;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+  margin: 2rem auto;
+  max-width: 800px; /* DECREASED WIDTH */
+  border-radius: 8px;
+}
+
+.book-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #7a2d1c;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  background: #ffffff;
+  max-width: 800px;
+  margin:2rem auto;
+  padding:2.5rem 5%;
+  border-radius: 8px;
+}
+
+.chapter-body h2 {
+  color: #c7573b;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.chapter-body p {
+  margin-bottom: 1.4rem;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th {
+  background: #fa6551;
+  color: white;
+  padding: 0.75rem;
+}
+
+td {
+  padding: 0.75rem;
+  background: #fff;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

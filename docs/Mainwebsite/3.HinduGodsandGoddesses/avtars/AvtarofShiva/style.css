@@ -1,0 +1,287 @@
+/* shiva.css */
+
+body {
+    margin: 0;
+    font-family: 'Hind', sans-serif;
+    background-color: #fdfaf6;
+    color: #1e1e1e;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    padding-bottom: 60px;
+}
+
+/* Devanagari heading font */
+h1,
+h2 {
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    color: #6d2400;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2d2926;
+    color: white;
+    padding: 1rem 2rem;
+    font-family: 'Noto Serif Devanagari', serif;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #6d2400;
+    border-radius: 4px;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background-color: #3b3b3b;
+    padding: 0;
+    border-radius: 5px;
+    z-index: 100;
+    
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu li a {
+    display: block;
+    color: #f3f3f3;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background-color: #6d2400;
+}
+
+/* Main Content */
+.content {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.content h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 3px solid #6d2400;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+section {
+    margin-bottom: 3rem;
+    background: #ffffff;
+    border-left: 5px solid #a52a2a;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
+section h2 {
+    font-size: 1.8rem;
+    color: #9b1c1c;
+}
+
+section p {
+    margin: 0.8rem 0;
+}
+
+strong {
+    color: #6b0000;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .submenu {
+        position: static;
+    }
+}
+
+/* === Avatars Submenu === */
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-dropdown > .nested-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 200px;
+    background-color: #3a3a3a;
+    border-radius: 5px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    padding: 0;
+    z-index: 1000;
+}
+
+.nested-dropdown:hover > .nested-submenu {
+    display: block;
+}
+
+.nested-submenu li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nested-submenu li:last-child {
+    border-bottom: none;
+}
+
+.nested-submenu li a {
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.nested-submenu li a:hover {
+    background-color: #6d2400;
+    list-style: none;
+}
+
+.nested-dropdown > .nested-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    list-style: none;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

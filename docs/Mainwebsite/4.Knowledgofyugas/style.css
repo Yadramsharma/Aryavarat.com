@@ -1,0 +1,306 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Merriweather', serif;
+  background-color: #fffdf5;
+  color: #3e2723;
+}
+
+/* Header */
+.yuga-header {
+  text-align: center;
+  background-color: #fff4e6;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid #ffb74d;
+}
+
+.yuga-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #7b1f1f;
+}
+
+.yuga-header p {
+  font-size: 1.2rem;
+  color: #5d4037;
+}
+
+/* Grid Layout */
+.yuga-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Yuga Cards */
+.yuga-card {
+  background-color: #fdf6e3;
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 6px solid transparent;
+}
+
+.yuga-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+/* Yuga Specific Colors */
+.satya {
+  border-left-color: #8bc34a;
+}
+
+.treta {
+  border-left-color: #ff9800;
+}
+
+.dvapara {
+  border-left-color: #3f51b5;
+}
+
+.kali {
+  border-left-color: #9e9e9e;
+}
+
+/* Text Inside Card */
+.yuga-card h2 {
+  font-size: 1.5rem;
+  color: #6d1b1b;
+  margin-bottom: 0.5rem;
+}
+
+.yuga-card p {
+  font-size: 1.05rem;
+  color: #4e342e;
+}
+
+.yuga-card .sanskrit {
+  font-style: italic;
+  color: #a0522d;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+}
+
+
+nav {
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  background-color: var(--secondary);
+  color:white
+  
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+/* Basic nav setup */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+  display: inline-block;
+}
+
+/* Submenu setup */
+nav ul li ul.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;   /* dropdown appears directly below */
+  left: 0;     /* aligned with left of parent */
+  background-color: #fffaf0;
+  border: 1px solid #d2b48c;
+  min-width: 180px;
+  z-index: 999;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+/* Show submenu on hover */
+nav ul li:hover > ul.submenu {
+  display: block;
+}
+
+/* Submenu items style */
+nav ul li ul.submenu li {
+  display: block;
+  padding: 10px 15px;
+}
+
+nav ul li ul.submenu li a {
+  color: #5a4c40;
+  text-decoration: none;
+  display: block;
+  font-family: 'Merriweather', serif;
+}
+
+nav ul li ul.submenu li a:hover {
+  background-color: #f5e9d3;
+  color: #8e5a2f;
+}
+nav ul li a:hover {
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    transition: all 0.3s ease;
+}
+
+
+.a1{
+    color:#c19a6b;
+    font-weight: bold;
+    font-family:'Playfair Display', serif;
+
+    background-color:  #fffdf5;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+#typewriter{
+    color:#c19a6b;
+    font-weight: bold;
+    font-family:'Playfair Display', serif;
+    text-align: center;
+    text-decoration: underline;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 75px;
+    background-color: #f5e9d3;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #8e5a2f;
+}
+
+nav ul li a:hover {
+    color: #e1b866;
+    font-size: 1.04rem;
+}
+
+nav {
+  background-color: #4e1e1e;
+}
+nav ul li a {
+  color: #ffdf8c;
+}
+nav ul li a:hover {
+  color: #ffc107;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

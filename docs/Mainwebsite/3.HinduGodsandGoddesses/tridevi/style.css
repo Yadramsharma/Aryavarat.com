@@ -1,0 +1,230 @@
+/* Fonts & base styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  background-color: #fffdf5; /* ivory white */
+  color: #3b2f2f; /* dark brown text */
+  line-height: 1.6;
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #872341; /* deep maroon */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Baloo 2', cursive;
+}
+
+.logo {
+  color: #fdd835; /* golden yellow */
+  font-size: 1.8rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #fff8e1;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #fdd835;
+  text-decoration: underline;
+}
+
+/* Dropdown menus */
+.submenu, .nested-submenu {
+  display: none;
+  position: absolute;
+  background-color: #aa4a44; /* muted maroon */
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+}
+
+.nav-links li:hover > .submenu,
+.avatars-dropdown:hover > .nested-submenu {
+  display: block;
+  list-style: none;
+}
+
+.submenu a, .nested-submenu a {
+  color: #ffe7c4;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+}
+
+.nested-submenu {
+  top: 0;
+  left: 100%;
+  background-color: #c2625d;
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+  background-color: #fffdf5;
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-family: 'Baloo 2', cursive;
+  color: #872341;
+  border-bottom: 2px solid #fdd835;
+  padding-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: 'Baloo 2', cursive;
+  color: #36454F; /* steel grey */
+  margin-top: 2rem;
+  border-left: 5px solid #fdd835;
+  padding-left: 0.6rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  list-style: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #872341;
+  color: #fff8e1;
+  margin-top: 3rem;
+  font-family: 'Baloo 2', cursive;
+  font-size: 0.95rem;
+}
+
+/* Responsive tweaks (optional) */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links li {
+    width: 100%;
+    list-style: none;
+  }
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

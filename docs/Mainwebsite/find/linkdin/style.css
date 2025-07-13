@@ -1,0 +1,78 @@
+.linkedin-card {
+  width: 800px;
+  height:300px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+/* Center the card */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5; /* optional */
+}
+
+.linkedin-banner {
+  height: 80px;
+  background: #0077b5;
+}
+
+.linkedin-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid white;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  background-color: white;
+}
+
+.linkedin-info {
+  padding: 60px 20px 20px 20px;
+}
+
+.linkedin-info h3 {
+  margin: 0;
+  color: #333;
+}
+
+.linkedin-info p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.linkedin-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.connect-btn, .message-btn {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.connect-btn {
+  background-color: #0077b5;
+  color: white;
+}
+
+.message-btn {
+  background-color: white;
+  color: #0077b5;
+  border: 1px solid #0077b5;
+}

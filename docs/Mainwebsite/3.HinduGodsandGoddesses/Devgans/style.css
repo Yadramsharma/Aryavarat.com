@@ -1,0 +1,236 @@
+/* Import fonts (add this to HTML <head> if not already) */
+/* <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&family=Noto+Serif+Devanagari&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet"> */
+
+body {
+    font-family: 'Noto Sans Devanagari', serif;
+    background-color: #f9f5f0;
+    margin: 0;
+    padding: 0;
+    line-height: 1.7;
+    color: #3e2c1c;
+}
+
+.navbar {
+    background-color: #e0d2b6;
+    padding: 10px 20px;
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #5a422b;
+    font-family: 'Noto Serif Devanagari', serif;
+    white-space: nowrap;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav-links > li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #5a422b;
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+    font-family: 'Noto Sans Devanagari', serif;
+}
+
+.nav-links a:hover {
+    background-color: #f5e9d5;
+    border-radius: 5px;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background-color: #fff8e7;
+    border: 1px solid #d7c7a4;
+    padding: 0;
+    list-style: none;
+    z-index: 999;
+}
+
+.submenu li {
+    position: relative;
+}
+
+.submenu li a {
+    padding: 10px 15px;
+    color: #4d3a26;
+}
+
+.dropdown:hover > .submenu {
+    display: block;
+}
+
+/* Multi-level submenu */
+.submenu .dropdown > a::after {
+    /*content: " ▸";*/
+    float: right;
+}
+
+.submenu .submenu {
+    top: 0;
+    left: 100%;
+    margin-left: 1px;
+}
+
+/* Main Content */
+.content {
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Noto Serif Devanagari', serif;
+}
+
+.content h1 {
+    font-size: 32px;
+    text-align: center;
+    color: #6b2e1d;
+    font-family: 'Sanskrit 2003', 'Tiro Devanagari Sanskrit', serif;
+}
+
+.content h2 {
+    font-size: 24px;
+    margin-top: 30px;
+    font-family: 'Tiro Devanagari Sanskrit', serif;
+}
+
+.content p, .content ul {
+    font-size: 18px;
+}
+
+.content ul {
+    padding-left: 20px;
+}
+
+.content li {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #e0d2b6;
+    text-align: center;
+    padding: 15px;
+    font-family: 'Noto Sans Devanagari', serif;
+    font-size: 14px;
+    color: #3e2c1c;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

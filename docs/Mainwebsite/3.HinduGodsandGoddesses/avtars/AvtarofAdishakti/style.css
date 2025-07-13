@@ -1,0 +1,455 @@
+/* === General Styles === */
+body {
+    font-family: 'Noto Sans Devanagari', serif;
+    background-color: #fff8f0;
+    color: #2d2d2d;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Noto Serif Devanagari', serif;
+    color: #7c2d12;
+    margin-top: 1em;
+}
+
+p {
+    margin: 0.5em 0;
+    padding: 0 1em;
+}
+
+section {
+    padding: 2em;
+    border-top: 2px solid #e7b17d;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 2em;
+}
+
+/* === Navbar Styles === */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #7c2d12;
+    padding: 0.8em 1.5em;
+    color: #ffffff;
+}
+
+.navbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    position: relative;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #ffdfae;
+}
+
+/* Dropdown menu */
+.navbar .submenu, .navbar .submenu-right {
+    display: none;
+    position: absolute;
+    background-color: #5e1f0b;
+    list-style: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.navbar .dropdown:hover .submenu {
+    display: block;
+}
+
+.navbar .dropdown-sub:hover .submenu-right {
+    display: block;
+    left: 100%;
+    top: 0;
+}
+
+.navbar .submenu li {
+    padding: 0.3em 0.8em;
+}
+
+.navbar .submenu li a {
+    color: #ffffff;
+    display: block;
+}
+
+.navbar .submenu li a:hover {
+    color: #ffd580;
+}
+
+/* Add this new class for nested dropdowns */
+.dropdown-sub {
+  position: relative;
+}
+
+/* Show right submenu on hover of nested dropdown */
+.dropdown-sub:hover .submenu-right {
+  display: block;
+  left: 100%;
+  top: 0;
+}
+
+/* Adjust existing submenu-right if not already defined */
+.navbar .submenu-right {
+  display: none;
+  position: absolute;
+  background-color: #5e1f0b;
+  padding: 0.5em 0;
+  border-radius: 5px;
+  z-index: 999;
+  min-width: 180px;
+}
+
+/* Ensure .navbar li has enough height to cover hover area */
+.navbar .nav-links li {
+  position: relative;
+}
+
+/* Prevent submenu from hiding when moving mouse */
+.navbar .submenu,
+.navbar .submenu-right {
+  top: 100%;
+  left: 0;
+  margin-top: 0; /* remove any gaps */
+}
+
+/* Prevent flicker for nested submenu */
+.navbar .submenu li {
+  position: relative;
+}
+
+/* submenu-right should appear directly aligned to the right */
+.navbar .submenu-right {
+  top: 0;
+  left: 100%;
+  margin-left: 0;
+}
+
+.navbar .submenu,
+.navbar .submenu-right {
+  transition: opacity 0.2s ease;
+}
+
+
+/* === Section Headings === */
+#saumya-roops, #rodra-roops {
+    font-family: 'Noto Serif Devanagari', serif;
+    background-color: #fff3e6;
+    border-radius: 10px;
+    margin: 2em;
+    padding: 2em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* === Mantra & Bija Style === */
+.mantra {
+    font-weight: bold;
+    color: #b91c1c;
+    background-color: #fef3c7;
+    padding: 0.5em;
+    border-left: 4px solid #d97706;
+    margin: 1em 0;
+}
+
+/* === Symbol/Icon Enhancement === */
+section::before {
+    /*content: "✨ ";*/
+    font-size: 1.2em;
+    color: #d97706;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 0.5em;
+    }
+}
+
+body {
+  font-family: 'Noto Serif Devanagari', serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 20px;
+}
+
+h2 {
+  color: #1e40af;
+}
+
+h3 {
+  color: #7c2d12;
+  margin-top: 20px;
+}
+
+.devi-card {
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin: 40px auto;
+  width: 90%;
+  line-height: 1.7;
+}
+
+/* Individual background colors */
+.devi-shailputri {
+  background-color: #f8d9b4; /* light warm peach */
+}
+
+.devi-brahmacharini {
+  background-color: #eefcfb; /* light teal */
+}
+
+/* Add other Roops like this */
+.devi-chandraghanta {
+  background-color: #f3f0ff;
+}
+
+ul {
+  list-style-type: '🔸 ';
+  padding-left: 20px;
+}
+
+.devi-kushmanda {
+  background-color: #fefce8; /* soft golden yellow */
+}
+
+.devi-skandamata {
+  background-color: #fef2f2; /* soft pink */
+}
+
+.devi-katyayani {
+  background-color: #f0fdf4; /* light mint green */
+}
+
+.devi-kalaratri {
+  background-color: #ede9fe; /* soft violet-lavender for spiritual aura */
+}
+
+.devi-mahagauri {
+  background-color: #f0fdfd; /* soft sky-aqua tone for purity */
+}
+
+.devi-siddhidatri {
+  background-color: #fdf6f0; /* soft peach for divine calm and completeness */
+}
+
+.devi-annapurna {
+  background-color: #ffcbe3; /* warm creamy beige for nourishment */
+}
+
+
+.devi-kali {
+  background-color: #fdf2f8; /* soft magenta-pink for divine feminine power */
+}
+
+.devi-tara {
+  background-color: #e0f2fe; /* soft sky blue for grace and guidance */
+}
+
+.devi-tripura {
+  background-color: #fef3f9; /* soft rose-pink for divine beauty and bliss */
+}
+
+.devi-bhuvaneshwari {
+  background-color: #f3f4f6; /* soft gray-blue for cosmic space and wisdom */
+}
+
+.devi-chhinnamasta {
+  background-color: #fff1f2; /* soft light red-pink for fierce yet compassionate energy */
+}
+
+.devi-bhairavi {
+  background-color: #fef2f2; /* soft rose red – for intense but warm discipline energy */
+}
+
+.devi-dhumavati {
+  background-color: #f3f4f6; /* ash grey – symbolizing stillness and void */
+}
+
+.devi-bagalamukhi {
+  background-color: #fefce8; /* soft golden yellow – for clarity and speech energy */
+}
+
+.devi-matangi {
+  background-color: #ecfdf5; /* soft mint green – symbolizing intuition and creative flow */
+}
+
+.devi-kamala {
+  background-color: #fff7ed; /* soft peach/golden beige – radiating abundance and gentle joy */
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f4f0e6;
+  margin: 0;
+  padding: 20px;
+}
+
+.devi-card {
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  margin: 40px auto;
+  width: 90%;
+  line-height: 1.7;
+}
+
+.devi-saraswati {
+  background-color: #f0e7f9; /* light lavender */
+}
+
+.devi-lakshmi {
+  background-color: #fff0d6; /* soft golden */
+}
+
+.devi-durga {
+  background-color: #ffe5e5; /* light red/pink */
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #5b1e1e;
+}
+
+h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

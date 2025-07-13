@@ -1,0 +1,1998 @@
+/* Global Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Georgia', serif;
+  background-color: #f3e9d2;
+  /* parchment-like */
+  color: #2c1e1e;
+  line-height: 1.8;
+  list-style: none;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #fff;
+  padding: 12px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #8b4513;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #2c1e1e;
+  font-weight: 600;
+  padding: 8px;
+  transition: all 0.3s ease;
+  
+}
+
+.nav-links a:hover {
+  color: #8b0000;
+}
+
+/* Dropdown */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 35px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  list-style: none;
+}
+
+/* Parent dropdown wrapper */
+.nav-links li:hover>.submenu {
+  display: block;
+  list-style: none;
+}
+
+/* Ensure submenu doesn't disappear when hovered */
+.submenu:hover {
+  display: block;
+  list-style: none;
+}
+
+/* Nested submenu fix (for Avatars → Vishnu, Shiva, etc.) */
+.submenu li:hover>.submenu {
+  display: block;
+  left: 100%;
+  /* Show to the right */
+  top: 0;
+}
+
+/* Optional: add slight delay to smooth the transition */
+.submenu {
+  transition: all 0.2s ease-in-out;
+}
+
+/* General submenu styling */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 10px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Nested submenu inside a submenu */
+.submenu li {
+  position: relative;
+}
+
+.submenu li .submenu {
+  top: 0;
+  left: 100%;
+  display: none;
+  position: absolute;
+}
+
+/* Show submenu when hovering over direct parent */
+.nav-links > li.dropdown:hover > .submenu {
+  display: block;
+}
+
+/* Show nested submenu (like Avatars list) only when hovering on Avatars */
+.submenu > li.dropdown:hover > .submenu {
+  display: block;
+}
+
+
+.submenu li {
+  padding: 5px 20px;
+  white-space: nowrap;
+}
+
+.submenu li a {
+  color: #4a2e2e;
+}
+
+/* Main Page Sections */
+/*section {
+  max-width: 850px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Headings and Titles */
+h1,
+h2,
+h3,
+h4 {
+  color: #4a2e2e;
+  font-family: 'Georgia', serif;
+  border-bottom: 2px solid #b78d65;
+  padding-bottom: 6px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+/* Horizontal Rule */
+hr {
+  border: none;
+  border-top: 2px solid #8b4513;
+  margin: 30px 0;
+}
+
+/* Highlighted Text or Quotes */
+blockquote {
+  border-left: 4px solid #ccc;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  color: #555;
+  background: #fdfaf6;
+}
+
+/* Shloka Styling */
+.shloka {
+  font-style: italic;
+  font-size: 18px;
+  color: #2f2f2f;
+  margin: 10px 0;
+}
+
+/* Translation */
+.translation {
+  color: #6d4c41;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  padding: 40px 10px;
+}
+
+
+.sanskrit-bold {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #5b250f;
+}
+
+.sanskrit-italic {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #703c13;
+}
+
+.explanation {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #f9f4e7;
+  border-left: 4px solid #c5a062;
+  color: #3e2f1c;
+  font-size: 15.5px;
+  line-height: 1.6;
+  border-radius: 6px;
+  font-style: normal;
+}
+
+.upanishad-style {
+  background-color: #f7f2ee;
+  border: 2px solid #8b4d2d;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(139, 77, 45, 0.2);
+}
+
+.upanishad-style h3 {
+  color: #6a2e1b;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.upanishad-style .shloka {
+  font-size: 18px;
+  color: #4b2113;
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 10px;
+  border-left: 3px solid #c96c39;
+}
+
+.upanishad-style .translation {
+  font-size: 15.5px;
+  color: #5a3324;
+  background-color: #f4e0d5;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.upanishad-style .explanation {
+  font-size: 15px;
+  color: #44241b;
+  padding: 12px;
+  background-color: #fceee7;
+  border-left: 4px solid #8b4d2d;
+  border-radius: 5px;
+}
+
+.chandogya-style {
+  background-color: #e6f3f2;
+  border: 2px solid #2c5f5d;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(0, 60, 57, 0.15);
+}
+
+.chandogya-style h3 {
+  color: #174341;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.chandogya-style .shloka {
+  font-size: 18px;
+  color: #134c48;
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 12px;
+  border-left: 3px solid #49a09d;
+}
+
+.chandogya-style .translation {
+  font-size: 15.5px;
+  color: #2b4b49;
+  background-color: #daf2f1;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.chandogya-style .explanation {
+  font-size: 15px;
+  color: #1e3837;
+  padding: 12px;
+  background-color: #eefaf9;
+  border-left: 4px solid #2c5f5d;
+  border-radius: 5px;
+}
+
+.taittiriya-style {
+  background-color: #f3f1ff;
+  border: 2px solid #4b3b91;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(75, 59, 145, 0.2);
+}
+
+.taittiriya-style h3 {
+  color: #321f67;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.taittiriya-style .shloka {
+  font-size: 18px;
+  color: #1d1254;
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 12px;
+  border-left: 3px solid #8e80ff;
+}
+
+.taittiriya-style .translation {
+  font-size: 15.5px;
+  color: #2a215f;
+  background-color: #e2ddff;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.taittiriya-style .explanation {
+  font-size: 15px;
+  color: #2b2357;
+  padding: 12px;
+  background-color: #f6f4ff;
+  border-left: 4px solid #4b3b91;
+  border-radius: 5px;
+}
+
+.gita-ch8v3 {
+  background-color: #fff9ed;
+  border: 2px solid #c59f3d;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(197, 159, 61, 0.2);
+}
+
+.gita-ch8v3 h3 {
+  font-family: 'Georgia', serif;
+  color: #9c3d00;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.gita-ch8v3 .shloka {
+  font-size: 18px;
+  color: #6b2c00;
+  font-style: italic;
+  background-color: #fff2d6;
+  padding: 12px;
+  border-left: 4px solid #e8b954;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.gita-ch8v3 .translation {
+  font-size: 15.5px;
+  color: #472f0b;
+  background-color: #fef6e9;
+  padding: 10px;
+  border-radius: 6px;
+  border-left: 3px solid #c59f3d;
+}
+
+.gita-ch10v12 {
+  background-color: #f4f4fb;
+  border: 2px solid #5d3fd3;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(93, 63, 211, 0.15);
+}
+
+.gita-ch10v12 h3 {
+  font-family: 'Georgia', serif;
+  color: #3a2177;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.gita-ch10v12 .shloka {
+  font-size: 18px;
+  color: #2f1761;
+  background-color: #e8e5fa;
+  font-style: italic;
+  padding: 12px;
+  border-left: 5px solid #9c7af2;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.gita-ch10v12 .translation {
+  font-size: 16px;
+  color: #443266;
+  background-color: #f2f0fc;
+  padding: 10px;
+  border-left: 3px solid #b49de3;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.gita-ch10v12 .explanation {
+  font-size: 15.5px;
+  color: #34224f;
+  background-color: #f8f7fd;
+  padding: 10px;
+  border-left: 3px solid #9c8edc;
+  border-radius: 6px;
+}
+
+.rama-verse {
+  background-color: #fffaf2;
+  border: 2px solid #e6a93f;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(230, 169, 63, 0.15);
+}
+
+.rama-verse h3 {
+  font-family: 'Georgia', serif;
+  color: #b86e00;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.rama-verse .shloka {
+  font-size: 18px;
+  color: #2b4d73;
+  background-color: #e8f0fc;
+  font-style: italic;
+  padding: 12px;
+  border-left: 5px solid #5f9be3;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.rama-verse .translation {
+  font-size: 16px;
+  color: #423c2d;
+  background-color: #fdf4e2;
+  padding: 10px;
+  border-left: 3px solid #e7c179;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.rama-verse .explanation {
+  font-size: 15.5px;
+  color: #3e3a2f;
+  background-color: #fff9eb;
+  padding: 10px;
+  border-left: 3px solid #d7aa52;
+  border-radius: 6px;
+}
+
+.vishnu-verse {
+  background-color: #f0f9ff;
+  border: 2px solid #3b82f6;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.vishnu-verse h3 {
+  font-family: 'Georgia', serif;
+  color: #1e40af;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.vishnu-verse .shloka {
+  font-size: 18px;
+  color: #1d4ed8;
+  background-color: #e0edff;
+  font-style: italic;
+  padding: 12px;
+  border-left: 5px solid #60a5fa;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.vishnu-verse .translation {
+  font-size: 16px;
+  color: #334155;
+  background-color: #eff6ff;
+  padding: 10px;
+  border-left: 3px solid #93c5fd;
+  border-radius: 6px;
+}
+
+.devi-verse {
+  background-color: #fff5f7;
+  border: 2px solid #e11d48;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(225, 29, 72, 0.1);
+}
+
+.devi-verse h3 {
+  font-family: 'Georgia', serif;
+  color: #be123c;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.devi-verse .shloka {
+  font-size: 18px;
+  color: #9f1239;
+  background-color: #ffe4e6;
+  font-style: italic;
+  padding: 12px;
+  border-left: 5px solid #f43f5e;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.devi-verse .translation {
+  font-size: 16px;
+  color: #4b1e27;
+  background-color: #ffeef0;
+  padding: 10px;
+  border-left: 3px solid #fb7185;
+  border-radius: 6px;
+}
+
+.rigveda-box {
+  background-color: #fff7e6;
+  border: 2px solid #d97706;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(215, 119, 6, 0.15);
+  font-family: 'Georgia', serif;
+}
+
+.rigveda-box h3 {
+  color: #92400e;
+  border-bottom: 2px solid #d97706;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.rigveda-box .shloka {
+  background-color: #fff3c7;
+  color: #78350f;
+  padding: 14px;
+  border-left: 5px solid #f59e0b;
+  font-size: 18px;
+  font-style: italic;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.rigveda-box .translation {
+  background-color: #fef3c7;
+  color: #854d0e;
+  padding: 12px;
+  border-left: 4px solid #fbbf24;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.rigveda-box .explanation {
+  background-color: #fff9db;
+  color: #7c2d12;
+  padding: 12px;
+  border-left: 4px solid #facc15;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.yajurveda-style {
+  background-color: #e6f4ea;
+  border: 2px solid #15803d;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(21, 128, 61, 0.2);
+  font-family: 'Georgia', serif;
+}
+
+.yajurveda-style .shloka h3 {
+  color: #166534;
+  border-bottom: 2px solid #15803d;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.yajurveda-style .shloka p {
+  background-color: #d1fae5;
+  color: #065f46;
+  padding: 14px;
+  border-left: 5px solid #34d399;
+  font-size: 18px;
+  font-style: italic;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.yajurveda-style .translation {
+  background-color: #dcfce7;
+  color: #064e3b;
+  padding: 12px;
+  border-left: 4px solid #86efac;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.yajurveda-style .explanation {
+  background-color: #f0fdf4;
+  color: #064e3b;
+  padding: 12px;
+  border-left: 4px solid #bbf7d0;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+
+.chapter {
+  background-color: #fff;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+.chapter h2 {
+  color: #3498db;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 10px;
+}
+
+.chapter p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+.chapter p em {
+  display: block;
+  /* Ensures the italic content takes full width */
+  background-color: #f9f9f9;
+  border-left: 5px solid #e74c3c;
+  padding: 15px;
+  margin: 20px 0;
+  font-style: normal;
+  /* Override default italic if needed, for box styling */
+}
+
+.dropdown .submenu .drop .subsubmenu {
+  display: block;
+}
+
+.Svetasvatara-style {
+  background-color: #f4fdf6;
+  /* soft sage green */
+  border: 2px solid #2f855a;
+  /* dark green border */
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px rgba(47, 133, 90, 0.2);
+}
+
+.Svetasvatara-style h3 {
+  color: #22543d;
+  font-family: 'Georgia', serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.Svetasvatara-style .shloka {
+  font-size: 18px;
+  color: #065f46;
+  font-style: italic;
+  margin-bottom: 12px;
+  line-height: 1.6;
+  padding-left: 10px;
+  border-left: 3px solid #38a169;
+  /* vibrant green */
+}
+
+.Svetasvatara-style .translation {
+  font-size: 15.5px;
+  color: #1c4532;
+  background-color: #e6fffa;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.Svetasvatara-style .explanation {
+  font-size: 15px;
+  color: #22543d;
+  padding: 12px;
+  background-color: #f0fff4;
+  border-left: 4px solid #48bb78;
+  /* mint green */
+  border-radius: 5px;
+}
+
+.gita-style {
+  background-color: #f4f8fb;
+  /* Soft calm blue */
+  border: 2px solid #3b82f6;
+  /* Primary blue border */
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15);
+  font-family: 'Georgia', serif;
+}
+
+.gita-style h3 {
+  color: #1e3a8a;
+  /* Darker blue */
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  border-bottom: 2px solid #93c5fd;
+  padding-bottom: 6px;
+}
+
+.gita-style .shloka {
+  font-size: 18px;
+  color: #1d4ed8;
+  /* Deep blue */
+  background-color: #e0edff;
+  font-style: italic;
+  padding: 14px;
+  border-left: 4px solid #60a5fa;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.gita-style .translation {
+  font-size: 16px;
+  color: #433c1f;
+  /* Gold-brown for contrast */
+  background-color: #fefce8;
+  padding: 12px;
+  border-left: 4px solid #eab308;
+  border-radius: 6px;
+}
+
+
+.mandukya-style {
+  background-color: #f6f4ff;
+  /* light lavender */
+  border: 2px solid #4c1d95;
+  /* deep indigo */
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 14px rgba(76, 29, 149, 0.15);
+  font-family: 'Georgia', serif;
+}
+
+.mandukya-style h3 {
+  color: #3c096c;
+  /* rich purple */
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #a78bfa;
+  padding-bottom: 6px;
+}
+
+.mandukya-style .shloka {
+  font-size: 18px;
+  color: #4a148c;
+  /* deep purple */
+  background-color: #ede9fe;
+  font-style: italic;
+  padding: 14px;
+  border-left: 4px solid #c084fc;
+  /* soft gold-lavender */
+  border-radius: 6px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.mandukya-style .translation {
+  font-size: 16px;
+  color: #3b2f49;
+  /* dark neutral text */
+  background-color: #fdf4ff;
+  padding: 12px;
+  border-left: 4px solid #d8b4fe;
+  border-radius: 6px;
+}
+
+.shloka-container {
+  background-color: #f4faff;
+  padding: 24px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', sans-serif;
+  border: 2px solid #6c8cc7;
+  line-height: 1.6;
+}
+
+.shloka-block {
+  background-color: #eef5ff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 750px;
+  margin: 0 auto;
+  border-left: 4px solid #3c6dc4;
+  margin-bottom: 12px;
+}
+
+h2 {
+  color: #254d89;
+  border-bottom: 2px solid #6c8cc7;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.sanskrit .shloka-title {
+  color: #1e3d70;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 20px;
+  color: #3b3b3b;
+  margin-bottom: 15px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+
+
+}
+
+.translation-box {
+  background-color: #d9e8ff;
+  padding: 10px 15px;
+  border-left: 4px solid #3c6dc4;
+  color: #1f2f4a;
+  border-radius: 9px;
+  max-width: 754px;
+  margin: 0 auto;
+  margin-bottom: 12px;
+
+}
+
+.explanation-box {
+  background-color: #f1f7ff;
+  border-left: 4px solid #7b3b15;
+  padding: 12px 15px;
+  color: #5e312a;
+  border-radius: 9px;
+  max-width: 754px;
+  margin: 0 auto;
+}
+
+.box-container {
+  background-color: #fcf6f2;
+  border: 2px solid #944E2A; /* Brown border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #3b3b3b;
+}
+
+.box-container h2 {
+  color: #944E2A; /* Brown heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container hr {
+  border: none;
+  border-top: 1.5px solid #944E2A;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #944E2A;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #f9e8de;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #5a2e1a;
+}
+
+.explanation-box {
+  background-color: #fff5eb;
+  border-left: 4px solid #b45e35;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.box-container-gita11 {
+  background-color: #fdf8f2;
+  border: 2px solid #3b4c8b; /* Royal Blue */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2c2c35;
+}
+
+.box-container-gita11 h2 {
+  color: #3b4c8b; /* Royal Blue Heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container-gita11 hr {
+  border: none;
+  border-top: 1.5px solid #3b4c8b;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #2c3a75;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #e5ecff;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #2e3a5c;
+}
+
+.explanation-box {
+  background-color: #fff9e7;
+  border-left: 4px solid #e0b144; /* Gold left bar */
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.box-container-udyoga {
+  background-color: #fbf7ff;
+  border: 2px solid #6b3fa0; /* Deep violet */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #372a45;
+}
+
+.box-container-udyoga h2 {
+  color: #6b3fa0; /* Violet heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container-udyoga hr {
+  border: none;
+  border-top: 1.5px solid #6b3fa0;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #5b2f88;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #ede5fb;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #3d2c59;
+}
+
+.explanation-box {
+  background-color: #f6efff;
+  border-left: 4px solid #9c6add;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.box-container-yuddha {
+  background-color: #f3fafd;
+  border: 2px solid #3a7c78; /* Teal border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d3e40;
+}
+
+.box-container-yuddha h2 {
+  color: #2c5c5a; /* Deep greenish heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container-yuddha hr {
+  border: none;
+  border-top: 1.5px solid #3a7c78;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #256d6a;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #d3f1f0;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: #1d4040;
+  font-size: 15px;
+}
+
+.explanation-box {
+  background-color: #e8f7f7;
+  border-left: 4px solid #45a19c;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.box-container-yuddha {
+  background-color: #f3fafd;
+  border: 2px solid #3a7c78; /* Teal border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2d3e40;
+}
+
+.box-container-yuddha h2 {
+  color: #2c5c5a; /* Deep greenish heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container-yuddha hr {
+  border: none;
+  border-top: 1.5px solid #3a7c78;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #256d6a;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #d3f1f0;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: #1d4040;
+  font-size: 15px;
+}
+
+.explanation-box {
+  background-color: #e8f7f7;
+  border-left: 4px solid #45a19c;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.box-container-ayodhya {
+  background-color: #fffaf1;
+  border: 2px solid #b8860b; /* Golden brown border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #4a3b20;
+}
+
+.box-container-ayodhya h2 {
+  color: #b8860b; /* Golden brown heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container-ayodhya hr {
+  border: none;
+  border-top: 1.5px solid #b8860b;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #8b5c00;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #fef2d7;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #5e430f;
+}
+
+.explanation-box {
+  background-color: #fff8e6;
+  border-left: 4px solid #dcae36;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.box-container-vishnu {
+  background-color: #f5f7fa;
+  border: 2px solid #4b4f82; /* Deep indigo border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 780px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2b2e45;
+}
+
+.box-container-vishnu h2 {
+  color: #3b3e6b; /* Indigo heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.box-container-vishnu hr {
+  border: none;
+  border-top: 1.5px solid #4b4f82;
+  margin-bottom: 20px;
+}
+
+.shloka-title {
+  color: #4b4f82;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.translation-box {
+  background-color: #e1e6ff;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: #2a2e4f;
+  font-size: 15px;
+}
+
+.explanation-box {
+  background-color: #eef1fa;
+  border-left: 4px solid #6d73b5;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.gita-box-container {
+  background-color: #fefdf9;
+  border: 2px solid #2f6f4f; /* Emerald border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 760px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2f3b2f;
+}
+
+.gita-box-container h3 {
+  color: #2f6f4f; /* Emerald heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.gita-box-container hr {
+  border: none;
+  border-top: 1.5px solid #2f6f4f;
+  margin-bottom: 20px;
+}
+
+.gita-shloka-title {
+  color: #276346;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.gita-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.gita-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.gita-translation-box {
+  background-color: #e6f4ed;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #1d402f;
+  font-size: 15px;
+}
+
+.vishnu-purana-box {
+  background-color: #fefbf6;
+  border: 2px solid #2c4372; /* Deep sapphire border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 830px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2a2a33;
+}
+
+.vishnu-purana-box h2 {
+  color: #2c4372; /* Sapphire heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.vishnu-purana-box hr {
+  border: none;
+  border-top: 1.5px solid #2c4372;
+  margin-bottom: 20px;
+}
+
+.vp-shloka-title {
+  color: #2c4372;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.vp-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.vp-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.vp-translation-box {
+  background-color: #e7ecff;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #1c2a50;
+}
+
+.vp-explanation-box {
+  background-color: #f9f4e6;
+  border-left: 4px solid #d2aa2a; /* Gold highlight */
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #594c1c;
+}
+
+.shiva-box-container {
+  background-color: #f7fafa;
+  border: 2px solid #444c5c; /* Charcoal border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 830px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2f323a;
+}
+
+.shiva-box-container h2 {
+  color: #3a4452; /* Deep slate heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.shiva-box-container hr {
+  border: none;
+  border-top: 1.5px solid #444c5c;
+  margin-bottom: 20px;
+}
+
+.shiva-shloka-title {
+  color: #3a4452;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.shiva-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.shiva-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.shiva-translation-box {
+  background-color: #e3eaf0;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: #2d3947;
+  font-size: 15px;
+}
+
+.shiva-explanation-box {
+  background-color: #f2f6fa;
+  border-left: 4px solid #647689;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #3b434f;
+}
+
+.devi-box-container {
+  background-color: #fff9f7;
+  border: 2px solid #c06c84; /* Rose-gold border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 830px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #4a2c34;
+}
+
+.devi-box-container h2 {
+  color: #a0526c; /* Rose heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.devi-box-container hr {
+  border: none;
+  border-top: 1.5px solid #c06c84;
+  margin-bottom: 20px;
+}
+
+.devi-shloka-title {
+  color: #a0526c;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.devi-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.devi-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.devi-translation-box {
+  background-color: #ffeaea;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: #6e2e3d;
+  font-size: 15px;
+}
+
+.devi-explanation-box {
+  background-color: #fff1f3;
+  border-left: 4px solid #e27d9d;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #5c2f3e;
+}
+
+.mandukya-box-container {
+  background-color: #fcfbf9;
+  border: 2px solid #bfa64b; /* Gold border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e2e2e;
+}
+
+.mandukya-box-container h2 {
+  color: #9c8200; /* Gold heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.mandukya-box-container hr {
+  border: none;
+  border-top: 1.5px solid #bfa64b;
+  margin-bottom: 20px;
+}
+
+.mandukya-shloka-title {
+  color: #a4881f;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.mandukya-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.mandukya-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.mandukya-translation-box {
+  background-color: #fff6d4;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #5e4e1f;
+}
+
+.mandukya-explanation-box {
+  background-color: #fdf9ea;
+  border-left: 4px solid #c8a900;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #3b320c;
+}
+
+.gita9-box-container {
+  background-color: #fffaf5;
+  border: 2px solid #9e3b3b; /* Crimson border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #3b1f1f;
+}
+
+.gita9-box-container h2 {
+  color: #9e3b3b;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.gita9-box-container hr {
+  border: none;
+  border-top: 1.5px solid #9e3b3b;
+  margin-bottom: 20px;
+}
+
+.gita9-shloka-title {
+  color: #8c2e2e;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.gita9-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.gita9-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.gita9-translation-box {
+  background-color: #ffe9e6;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #5e2323;
+  margin-bottom: 15px;
+}
+
+.gita9-explanation-box {
+  background-color: #fff3ec;
+  border-left: 4px solid #d66565;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #482b2b;
+}
+
+.gita3-box-container {
+  background-color: #f8f9fa;
+  border: 2px solid #3e5e72; /* Steel blue */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e3a44;
+}
+
+.gita3-box-container h2 {
+  color: #3e5e72;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.gita3-box-container hr {
+  border: none;
+  border-top: 1.5px solid #3e5e72;
+  margin-bottom: 20px;
+}
+
+.gita3-shloka-title {
+  color: #37596d;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.gita3-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.gita3-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.gita3-translation-box {
+  background-color: #e6f0f4;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #2c4a58;
+  margin-bottom: 15px;
+}
+
+.gita3-explanation-box {
+  background-color: #f0f5f8;
+  border-left: 4px solid #5a8ea3;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #2f3e4a;
+}
+
+.yoga-box-container {
+  background-color: #f9fbfc;
+  border: 2px solid #3b4c66; /* Cool indigo border */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #2f3442;
+}
+
+.yoga-box-container h2 {
+  color: #3b4c66;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.yoga-box-container hr {
+  border: none;
+  border-top: 1.5px solid #3b4c66;
+  margin-bottom: 20px;
+}
+
+.yoga-shloka-title {
+  color: #2e3b50;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.yoga-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.yoga-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.yoga-translation-box {
+  background-color: #e3eaf2;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #2b3b50;
+  margin-bottom: 15px;
+}
+
+.yoga-explanation-box {
+  background-color: #f0f4f8;
+  border-left: 4px solid #5a6f89;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #3d475a;
+}
+
+.gita4-box-container {
+  background-color: #fdf9f6;
+  border: 2px solid #7e2e2e; /* Deep maroon */
+  border-radius: 10px;
+  padding: 20px 25px;
+  max-width: 750px;
+  margin: 30px auto;
+  font-family: 'Segoe UI', sans-serif;
+  color: #3b2323;
+}
+
+.gita4-box-container h2 {
+  color: #7e2e2e;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.gita4-box-container hr {
+  border: none;
+  border-top: 1.5px solid #7e2e2e;
+  margin-bottom: 20px;
+}
+
+.gita4-shloka-title {
+  color: #6a1f1f;
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.gita4-sanskrit {
+  font-family: 'Noto Serif Devanagari', serif;
+  font-size: 19px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.gita4-transliteration {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.gita4-translation-box {
+  background-color: #fceee7;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #5c2e2e;
+  margin-bottom: 15px;
+}
+
+.gita4-explanation-box {
+  background-color: #fff6eb;
+  border-left: 4px solid #d08941;
+  padding: 12px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  color: #5c4420;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}

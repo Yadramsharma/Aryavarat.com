@@ -1,0 +1,200 @@
+/* General reset and layout */
+body {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffaf0;
+    color: #2c2c2c;
+}
+
+.navbar {
+    background-color: #4a2c2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: #ffcc70;
+    font-family: 'Baloo 2', cursive;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li {
+    position: relative;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff8e1;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    display: block;
+}
+
+/* Show only direct submenu on hover */
+.nav-links > li:hover > .submenu {
+    display: block;
+    list-style: none;
+}
+
+/* Submenu */
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #6a3f3f;
+    padding: 0.5rem;
+    z-index: 10;
+    min-width: 200px;
+}
+
+.submenu li a {
+    color: #ffe7c4;
+    padding: 0.5rem;
+    display: block;
+}
+
+/* Nested submenu for Avatars */
+.nested-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #7a4a4a;
+    padding: 0.5rem;
+    min-width: 220px;
+    z-index: 10;
+}
+
+/* Show nested submenu only on Avatars hover */
+.avatars-dropdown:hover > .nested-submenu {
+    display: block;
+}
+
+/* Main content styling */
+main {
+    padding: 2rem;
+}
+
+h1, h2 {
+    font-family: 'Baloo 2', cursive;
+    color: #7c2d12;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.deity {
+    margin-bottom: 1.5rem;
+}
+
+.iconography {
+    margin-left: 1rem;
+    font-style: italic;
+}
+
+/* ✅ Responsive Enhancements */
+@media (max-width: 1200px) {
+  .chapter, .section-card, .footer-title, .social-icons {
+    max-width: 95%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .footer-title {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .footer-title > div {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+  }
+
+  .interaction-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .custom-btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .social-icons ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .chapter h2 {
+    font-size: 1.5rem;
+  }
+
+  .chapter p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .comment-input,
+  #comment,
+  #username {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .stars label {
+    font-size: 20px;
+  }
+
+  .custom-btn,
+  .delete-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .visitor-share-widget {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}
